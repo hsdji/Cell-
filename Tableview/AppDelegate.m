@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  Tableview
 //
-//  Created by 智慧杰 on 16/7/1.
+//  Created by ehome on 16/7/1.
 //
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    ViewController *VC = [[ViewController alloc] init];
+    UINavigationController *vcNAV = [[UINavigationController alloc] initWithRootViewController:VC];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = vcNAV;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
